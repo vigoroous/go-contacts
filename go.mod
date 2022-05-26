@@ -1,18 +1,21 @@
 module go-contacts
 
+go 1.18
+
 require (
-	github.com/denisenkom/go-mssqldb v0.0.0-20191001013358-cfbb681360f0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5 // indirect
-	github.com/go-sql-driver/mysql v1.4.1 // indirect
-	github.com/gorilla/context v1.1.1 // indirect
-	github.com/gorilla/mux v1.6.2
-	github.com/jinzhu/gorm v1.9.1
-	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a // indirect
-	github.com/jinzhu/now v1.0.1 // indirect
-	github.com/joho/godotenv v1.3.0
-	github.com/lib/pq v1.0.0 // indirect
-	github.com/mattn/go-sqlite3 v1.11.0 // indirect
-	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5
-	google.golang.org/appengine v1.6.4 // indirect
+	github.com/gorilla/mux v1.8.0
+	github.com/jinzhu/gorm v1.9.16
+	github.com/joho/godotenv v1.4.0
+	golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898
+	gorm.io/driver/sqlite v1.3.2
+	gorm.io/gorm v1.23.5
+)
+
+require (
+	github.com/felixge/httpsnoop v1.0.1 // indirect
+	github.com/gorilla/handlers v1.5.1 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/mattn/go-sqlite3 v1.14.13 // indirect
 )

@@ -1,12 +1,13 @@
 package models
 
 import (
-	"github.com/dgrijalva/jwt-go"
-	"github.com/jinzhu/gorm"
 	u "go-contacts/utils"
-	"golang.org/x/crypto/bcrypt"
 	"os"
 	"strings"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/jinzhu/gorm"
+	"golang.org/x/crypto/bcrypt"
 )
 
 /*
@@ -53,9 +54,9 @@ func (account *Account) Validate() (map[string]interface{}, bool) {
 
 func (account *Account) Create() (map[string]interface{}) {
 
-	if resp, ok := account.Validate(); !ok {
-		return resp
-	}
+	// if resp, ok := account.Validate(); !ok {
+	// 	return resp
+	// }
 
 	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(account.Password), bcrypt.DefaultCost)
 	account.Password = string(hashedPassword)
