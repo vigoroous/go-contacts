@@ -32,11 +32,12 @@ func main() {
 	fmt.Println(port)
 
 	// Where ORIGIN_ALLOWED is like `scheme://dns[:port]`, or `*` (insecure)
-	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With"})
+	headersOk := handlers.AllowedHeaders([]string{"Content-Type", "Authorization", "X-Requested-With"})
 	originsOk := handlers.AllowedOrigins([]string{os.Getenv("ORIGIN_ALLOWED")})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
+	credentialsOk := handlers.AllowCredentials()
 
-	err := http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)) //Launch the app, visit localhost:8000/api
+	err := http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk, credentialsOk)(router)) //Launch the app, visit localhost:8000/api
 	if err != nil {
 		fmt.Print(err)
 	}
